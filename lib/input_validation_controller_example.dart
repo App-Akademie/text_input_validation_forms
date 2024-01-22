@@ -16,7 +16,19 @@ class InputValidationControllerExample extends StatefulWidget {
 class _InputValidationControllerExampleState
     extends State<InputValidationControllerExample> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController controller = TextEditingController();
+  late final TextEditingController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
