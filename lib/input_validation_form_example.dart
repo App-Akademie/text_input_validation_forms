@@ -30,7 +30,7 @@ class _InputValidationFormExampleState
             TextFormField(
               decoration: const InputDecoration(labelText: "FormExample"),
               onChanged: (value) => text = value,
-              validator: lengthValidator,
+              validator: textErrorText,
             ),
             const SizedBox(height: 16),
             ElevatedButton(

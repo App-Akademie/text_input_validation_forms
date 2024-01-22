@@ -42,7 +42,7 @@ class _InputValidationControllerExampleState
             TextFormField(
               decoration: const InputDecoration(labelText: "ControllerExample"),
               controller: controller,
-              validator: lengthValidator,
+              validator: textErrorText,
             ),
             const SizedBox(height: 16),
             ElevatedButton(
