@@ -35,7 +35,8 @@ class _InputValidationFormExampleState
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                if (_formKey.currentState!.validate()) {
+                final currentState = _formKey.currentState;
+                if (currentState != null && currentState.validate()) {
                   log(text);
                   showSnackbar(context, text);
                 }

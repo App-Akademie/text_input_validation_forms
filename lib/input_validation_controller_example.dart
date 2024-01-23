@@ -16,13 +16,7 @@ class InputValidationControllerExample extends StatefulWidget {
 class _InputValidationControllerExampleState
     extends State<InputValidationControllerExample> {
   final _formKey = GlobalKey<FormState>();
-  late final TextEditingController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = TextEditingController();
-  }
+  final TextEditingController controller = TextEditingController(text: "");
 
   @override
   void dispose() {
@@ -47,7 +41,8 @@ class _InputValidationControllerExampleState
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                if (_formKey.currentState!.validate()) {
+                final currentState = _formKey.currentState;
+                if (currentState != null && currentState.validate()) {
                   log(controller.text);
                   showSnackbar(context, controller.text);
                 }
